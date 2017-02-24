@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Autofac;
 using Mediator.Net.Autofac;
-using Mediator.Net.Middlewares.UnitOfWork.Test.Commands;
 using Mediator.Net.Middlewares.UnitOfWork.Test.Database;
 using Mediator.Net.Middlewares.UnitOfWork.Test.Events;
 using NUnit.Framework;
@@ -17,7 +17,8 @@ namespace Mediator.Net.Middlewares.UnitOfWork.Test
         private IContainer _container;
         private Guid _personId = Guid.NewGuid();
         private Guid _carId = Guid.NewGuid();
-        public void GivenAMediatorWithUnitOfWork()
+        private bool _exceptionHappened = false;
+        public void GivenAMediatorWithUnitOfWorkAndMultiEventHandlers()
         {
 
             var builder = new MediatorBuilder();
@@ -43,12 +44,17 @@ namespace Mediator.Net.Middlewares.UnitOfWork.Test
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                _exceptionHappened = true;
             }
 
         }
 
-        public void ThenTransactionShouldBeRolledback()
+        public void ThenExceptionShouldHappen()
+        {
+            _exceptionHappened.ShouldBeTrue();
+        }
+
+        public void AndTheTransactionShouldBeRolledback()
         {
             
             var db = _container.Resolve<MyDbContext>();

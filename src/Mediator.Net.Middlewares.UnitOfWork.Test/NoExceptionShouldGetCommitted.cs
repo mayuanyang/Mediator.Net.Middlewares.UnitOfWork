@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using Mediator.Net.Autofac;
-using Mediator.Net.Middlewares.UnitOfWork.Test.Commands;
 using Mediator.Net.Middlewares.UnitOfWork.Test.Database;
 using Mediator.Net.Middlewares.UnitOfWork.Test.Events;
 using NUnit.Framework;

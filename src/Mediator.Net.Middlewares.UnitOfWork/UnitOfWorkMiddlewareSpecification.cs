@@ -48,7 +48,7 @@ namespace Mediator.Net.Middlewares.UnitOfWork
         {
             if (ShouldExecute(context))
             {
-                _committableTransaction.Rollback();
+                _committableTransaction.Rollback(ex);
             }
             throw ex;
         }
