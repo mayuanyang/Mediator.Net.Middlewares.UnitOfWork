@@ -31,8 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mediator.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Mediator.Net\src\Mediator.Net\bin\Debug\net45\Mediator.Net.dll</HintPath>
+      <HintPath>..\..\packages\Mediator.Net.1.0.65\lib\net45\Mediator.Net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

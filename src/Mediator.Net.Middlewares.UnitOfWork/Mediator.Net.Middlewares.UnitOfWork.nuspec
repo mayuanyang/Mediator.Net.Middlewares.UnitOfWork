@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Mediator.Net.Middlewares.UnitOfWork</id>
+    <title>EventStore middleware for Mediator.Net</title>
+    <version>0.9.1</version>
+    <authors>Yuan(Eddy) Ma</authors>
+    <owners>Yuan(Eddy) Ma</owners>
+    <licenseUrl>https://github.com/mayuanyang/Mediator.Net</licenseUrl>
+    <projectUrl>https://github.com/mayuanyang/Mediator.Net.Middlewares.UnitOfWork</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Mediator.Net's middleware that to handle unit of work, it provides a CommittableTransaction for Handlers to enlist.</description>
+    <tags>.NET Mediator Cqrs DDD Command Event Request Response UnitOfWork Transaction</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+    </dependencies>
+  </metadata>
+</package>

@@ -58,11 +58,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediator.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Mediator.Net\src\Mediator.Net\bin\Debug\net45\Mediator.Net.dll</HintPath>
+      <HintPath>..\..\packages\Mediator.Net.1.0.65\lib\net45\Mediator.Net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Mediator.Net.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Mediator.Net.Autofac.1.0.46\lib\net45\Mediator.Net.Autofac.dll</HintPath>
+      <HintPath>..\..\packages\Mediator.Net.Autofac.1.0.65\lib\net45\Mediator.Net.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
