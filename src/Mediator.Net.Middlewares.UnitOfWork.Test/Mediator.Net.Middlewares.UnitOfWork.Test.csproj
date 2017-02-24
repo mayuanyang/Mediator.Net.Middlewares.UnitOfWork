@@ -58,8 +58,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Mediator.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Mediator.Net.1.0.59\lib\net45\Mediator.Net.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Mediator.Net\src\Mediator.Net\bin\Debug\net45\Mediator.Net.dll</HintPath>
     </Reference>
     <Reference Include="Mediator.Net.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Mediator.Net.Autofac.1.0.46\lib\net45\Mediator.Net.Autofac.dll</HintPath>
@@ -90,8 +90,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\Car.cs" />
+    <Compile Include="EventHandlers\WhenAPersonIsAdded.cs" />
+    <Compile Include="EventHandlers\WhenACarIsAdded.cs" />
+    <Compile Include="Events\PersonAndCarAddedEvent.cs" />
+    <Compile Include="NoExceptionShouldGetCommitted.cs" />
     <Compile Include="ExceptionInHandlerShouldRollbackTransaction.cs" />
-    <Compile Include="CommandHandlers\PrintCommandHandler.cs" />
     <Compile Include="Commands\PrintCommand.cs" />
     <Compile Include="Database\MyDbContext.cs" />
     <Compile Include="Database\Person.cs" />
@@ -111,7 +115,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Events\" />
+    <Folder Include="CommandHandlers\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

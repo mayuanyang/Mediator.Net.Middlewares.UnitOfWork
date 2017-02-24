@@ -12,7 +12,7 @@ using TestStack.BDDfy;
 
 namespace Mediator.Net.Middlewares.UnitOfWork.Test
 {
-    public class ExceptionInHandlerShouldRollbackTransaction : TestBase
+    public class NoExceptionShouldGetCommitted : TestBase
     {
         private IContainer _container;
         private Guid _personId = Guid.NewGuid();
@@ -34,29 +34,22 @@ namespace Mediator.Net.Middlewares.UnitOfWork.Test
 
         }
 
-        public async Task WhenAEventIsPublishedAndOneOfTheHandlerThrowException()
+        public async Task WhenAEventIsPublished()
         {
-            try
-            {
-                var mediator = _container.Resolve<IMediator>();
-                await mediator.PublishAsync(new PersonAndCarAddedEvent(_personId, "person", _carId, "Benz", true));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            var mediator = _container.Resolve<IMediator>();
+            await mediator.PublishAsync(new PersonAndCarAddedEvent(_personId, "person", _carId, "Benz", false));
 
         }
 
         public void ThenTransactionShouldBeRolledback()
         {
-            
+
             var db = _container.Resolve<MyDbContext>();
             var per = db.Persons.SingleOrDefault(x => x.Id == _personId);
-            per.ShouldBeNull();
+            per.ShouldNotBeNull();
 
             var car = db.Cars.SingleOrDefault(x => x.Id == _carId);
-            car.ShouldBeNull();
+            car.ShouldNotBeNull();
         }
 
         [Test]

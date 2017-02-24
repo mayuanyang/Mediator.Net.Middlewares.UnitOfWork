@@ -31,8 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mediator.Net, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Mediator.Net.1.0.59\lib\net45\Mediator.Net.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Mediator.Net\src\Mediator.Net\bin\Debug\net45\Mediator.Net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ITransactionConfigurator.cs" />
+    <Compile Include="ITransactionContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TransactionConfigurator.cs" />
     <Compile Include="UnitOfWorkMiddleware.cs" />

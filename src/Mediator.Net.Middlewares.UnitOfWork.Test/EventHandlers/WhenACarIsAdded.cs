@@ -1,43 +1,43 @@
 ﻿using System;
 using System.Data;
-using System.Data.Entity;
-using System.Data.SqlClient;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Transactions;
 using Mediator.Net.Context;
 using Mediator.Net.Contracts;
-using Mediator.Net.Middlewares.UnitOfWork.Test.Commands;
 using Mediator.Net.Middlewares.UnitOfWork.Test.Database;
+using Mediator.Net.Middlewares.UnitOfWork.Test.Events;
 
-namespace Mediator.Net.Middlewares.UnitOfWork.Test.CommandHandlers
+namespace Mediator.Net.Middlewares.UnitOfWork.Test.EventHandlers
 {
-    class PrintCommandHandler : ICommandHandler<PrintCommand>
+    class WhenACarIsAdded : IEventHandler<PersonAndCarAddedEvent>
     {
         private readonly MyDbContext _db;
 
-        public PrintCommandHandler(MyDbContext db)
+        public WhenACarIsAdded(MyDbContext db)
         {
             _db = db;
         }
-        public async Task Handle(ReceiveContext<PrintCommand> context)
+        public async Task Handle(IReceiveContext<PersonAndCarAddedEvent> context)
         {
+
             CommittableTransaction tx;
             if (context.TryGetService(out tx))
             {
                 if (_db.Database.Connection.State != ConnectionState.Open)
                 {
-                     await _db.Database.Connection.OpenAsync();
+                    _db.Database.Connection.Open();
                 }
-                   
                 _db.Database.Connection.EnlistTransaction(tx);
             }
 
-            var first = await _db.Persons.SingleAsync(x => x.Id == 1);
-            first.FirstName = "new name";
+            var car = new Car {Id = context.Message.CarId, Name = context.Message.CarName};
+            _db.Cars.Add(car);
             await _db.SaveChangesAsync();
-
-            throw new NotImplementedException();
+            if (context.Message.ShouldThrow)
+            {
+                throw new Exception(nameof(WhenACarIsAdded));
+            }
+            
         }
     }
 }

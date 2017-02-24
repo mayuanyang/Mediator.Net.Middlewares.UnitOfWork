@@ -1,6 +1,4 @@
-﻿using System;
-using System.Data.Entity;
-using System.IO;
+﻿using System.Data.Entity;
 
 namespace Mediator.Net.Middlewares.UnitOfWork.Test.Database
 {
@@ -14,8 +12,10 @@ namespace Mediator.Net.Middlewares.UnitOfWork.Test.Database
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Person>().ToTable("Person").HasKey(x => x.Id);
+            modelBuilder.Entity<Car>().ToTable("Car").HasKey(x => x.Id);
         }
 
         public DbSet<Person> Persons { get; set; }
+        public DbSet<Car> Cars { get; set; }
     }
 }
