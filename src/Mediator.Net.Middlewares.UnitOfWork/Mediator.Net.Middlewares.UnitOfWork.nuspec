@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Mediator.Net.Middlewares.UnitOfWork</id>
-    <title>EventStore middleware for Mediator.Net</title>
+    <title>UnitOfWork middleware for Mediator.Net</title>
     <version>0.9.1</version>
     <authors>Yuan(Eddy) Ma</authors>
     <owners>Yuan(Eddy) Ma</owners>
