@@ -133,15 +133,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\UnitOfWork.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\UnitOfWork_log.ldf">
-      <DependentUpon>UnitOfWork.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Mediator.Net.Middlewares.UnitOfWork\Mediator.Net.Middlewares.UnitOfWork.csproj">
       <Project>{b8d88a9e-e5d8-4f92-bafa-dff5fb3a734c}</Project>
       <Name>Mediator.Net.Middlewares.UnitOfWork</Name>
