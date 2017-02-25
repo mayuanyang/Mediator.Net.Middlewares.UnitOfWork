@@ -9,18 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediator.Net.Middlewares.Un
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		AppVeyor|Any CPU = AppVeyor|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B8D88A9E-E5D8-4F92-BAFA-DFF5FB3A734C}.AppVeyor|Any CPU.ActiveCfg = Release|Any CPU
-		{B8D88A9E-E5D8-4F92-BAFA-DFF5FB3A734C}.AppVeyor|Any CPU.Build.0 = Release|Any CPU
 		{B8D88A9E-E5D8-4F92-BAFA-DFF5FB3A734C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B8D88A9E-E5D8-4F92-BAFA-DFF5FB3A734C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8D88A9E-E5D8-4F92-BAFA-DFF5FB3A734C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8D88A9E-E5D8-4F92-BAFA-DFF5FB3A734C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2E47440F-41FF-46F6-95FB-2699324A9471}.AppVeyor|Any CPU.ActiveCfg = AppVeyor|Any CPU
 		{2E47440F-41FF-46F6-95FB-2699324A9471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2E47440F-41FF-46F6-95FB-2699324A9471}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E47440F-41FF-46F6-95FB-2699324A9471}.Release|Any CPU.ActiveCfg = Release|Any CPU

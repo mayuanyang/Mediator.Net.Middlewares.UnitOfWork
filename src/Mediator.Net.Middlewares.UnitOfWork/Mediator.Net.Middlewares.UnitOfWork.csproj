@@ -53,6 +53,7 @@
     <Compile Include="UnitOfWorkMiddlewareSpecification.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Mediator.Net.Middlewares.UnitOfWork.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
