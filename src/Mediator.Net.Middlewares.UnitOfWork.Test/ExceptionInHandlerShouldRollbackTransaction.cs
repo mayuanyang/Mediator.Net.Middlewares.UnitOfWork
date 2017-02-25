@@ -42,7 +42,7 @@ namespace Mediator.Net.Middlewares.UnitOfWork.Test
                 var mediator = _container.Resolve<IMediator>();
                 await mediator.PublishAsync(new PersonAndCarAddedEvent(_personId, "person", _carId, "Benz", true));
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 _exceptionHappened = true;
             }
